@@ -1,0 +1,265 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    flex-direction: row;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #e4e4e4;
+}
+
+nav {
+    background: #90c52d;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+a.active,
+a:hover {
+    background: #6e6e6e;
+    transition: .5s;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 402px) {
+    label.logo {
+        font-size: 20px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 340px) {
+    label.logo {
+        font-size: 15px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 1733px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #3c502c;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: #00e623;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+}
+
+h2 {
+    color: #4e4e4e;
+    /* Колір тексту заголовка */
+    font: 50px "Trebuchet MS", "Lucida Sans";
+    /* Розмір та шрифт заголовка */
+    text-align: center;
+    /* Вирівнюємо текст заголовка по центру */
+}
+
+#pages {
+    display: flex;
+    /* Встановлюємо гнучкий контейнер */
+    justify-content: center;
+    /* Центруємо по горизонталі */
+    align-items: center;
+    /* Центруємо по вертикалі */
+    padding: 10px 0;
+    /* Відступи зверху та знизу */
+}
+
+#pages div {
+    margin: 0 5px;
+    /* Відступи між елементами меню */
+}
+
+#pages a {
+    font: 1px "Trebuchet MS", "Lucida Sans";
+    /* Розмір та шрифт посилань */
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    /* Плавна зміна кольору при наведенні */
+    border: 2px solid #000000;
+    /* Товщина та колір межі */
+    padding: 5px 15px;
+    /* Відступи всередині посилань */
+    background-color: #FFFFFF;
+    /* Колір фону посилань */
+    border-radius: 10px;
+    /* Закругленість кутів */
+    text-decoration: none;
+    /* Видалення підкреслення */
+    color: #333;
+    /* Колір тексту посилань */
+    font-size: 16px;
+    /* Розмір шрифту */
+}
+
+
+
+.rounded {
+    counter-reset: li;
+    list-style: none;
+    /* Видаляємо маркери списку */
+    font: 14px "Trebuchet MS", "Lucida Sans";
+    /* Розмір та шрифт списку */
+    padding: 0;
+    /* Зовнішні відступи */
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    /* Тінь тексту */
+}
+
+.rounded li {
+    position: relative;
+    /* Встановлюємо позицію відносно */
+    font: 30px "Trebuchet MS", "Lucida Sans";
+    /* Розмір та шрифт тексту */
+    padding: .4em .4em .4em 2em;
+    /* Відступи всередині li */
+    margin: .5em 40px;
+    /* Зовнішні відступи */
+    background: #DAD2CA;
+    /* Колір фону li */
+    color: #444;
+    /* Колір тексту */
+    border-radius: .3em;
+    /* Закругленість кутів */
+    transition: .3s ease-out;
+    /* Плавна зміна стилів при наведенні */
+}
+
+.rounded li:hover {
+    background: #E9E4E0;
+    /* Колір фону при наведенні */
+}
+
+.rounded li:hover::before {
+    transform: rotate(180deg);
+    /* Обертання при наведенні */
+}
+
+.rounded li::before {
+    content: counter(li);
+    /* Відображення номера li */
+    counter-increment: li;
+    /* Збільшення лічильника */
+    position: absolute;
+    /* Встановлюємо позицію абсолютно */
+    left: -1.3em;
+    /* Відстань зліва */
+    top: 50%;
+    /* Позиція зверху */
+    margin-top: -1.3em;
+    /* Вирівнюємо по вертикалі */
+    background: #8FD4C1;
+    /* Колір фону */
+    height: 2em;
+    /* Висота */
+    width: 2em;
+    /* Ширина */
+    line-height: 2em;
+    /* Висота рядка */
+    border: .3em solid white;
+    /* Товщина та колір межі */
+    text-align: center;
+    /* Вирівнюємо текст по центру */
+    font-weight: bold;
+    /* Напівжирний шрифт */
+    border-radius: 5em;
+    /* Закругленість кутів */
+    transition: all .3s ease-out;
+    /* Плавна зміна стилів при наведенні */
+}

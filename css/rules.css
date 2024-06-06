@@ -1,0 +1,265 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    flex-direction: row;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #e4e4e4;
+}
+
+nav {
+    background: #90c52d;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+a.active,
+a:hover {
+    background: #6e6e6e;
+    transition: .5s;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 402px) {
+    label.logo {
+        font-size: 20px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 340px) {
+    label.logo {
+        font-size: 15px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 1733px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #3c502c;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: #00e623;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+}
+
+header {
+    top: 0;
+    /* Встановлює відступ від верхнього краю вікна браузера */
+    left: 0;
+    /* Встановлює відступ від лівого краю вікна браузера */
+    width: 100%;
+    /* Задає ширину заголовку */
+    height: 5%;
+    /* Задає висоту заголовку відносно висоти вікна браузера */
+    background-color: #6E6E6E;
+    /* Задає колір фону заголовку */
+    /* padding: 20px; Встановлює внутрішні відступи для заголовку */
+    text-align: center;
+    /* Вирівнює текст у центрі */
+}
+
+h1 {
+    color: #949494;
+    /* Задає колір тексту заголовка */
+    text-align: center;
+    /* Вирівнює текст у заголовку по центру */
+    padding-top: 50px;
+    /* Задає внутрішній відступ зверху для заголовка */
+}
+
+#pages {
+    display: flex;
+    /* Встановлює властивість flex для блоку зі сторінками */
+    justify-content: center;
+    /* Вирівнює блок по центру горизонтально */
+    align-items: center;
+    /* Вирівнює блок по центру вертикально */
+    padding: 10px 0;
+    /* Встановлює внутрішні відступи для блоку зі сторінками */
+}
+
+
+
+#pages div {
+    margin: 0px;
+    /* Встановлює зовнішній відступ між блоками сторінок */
+}
+
+#pages a {
+    font: 1px "Trebuchet MS", "Lucida Sans";
+    /* Задає шрифт для посилань */
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    /* Задає плавний перехід кольорів */
+    border: 2px solid #000000;
+    /* Задає рамку для посилань */
+    padding: 5px 15px;
+    /* Встановлює внутрішні відступи для посилань */
+    background-color: #FFFFFF;
+    /* Задає колір фону посилань */
+    border-radius: 10px;
+    /* Задає радіус кутів для посилань */
+    text-decoration: none;
+    /* Видаляє підкреслення посилань */
+    color: #333;
+    /* Задає колір тексту посилань */
+    font-size: 16px;
+    /* Задає розмір шрифту для посилань */
+}
+
+#pages a:hover {
+    background-color: #BAFF39;
+    /* Задає колір фону посилань при наведенні */
+    color: #000000;
+    /* Змінює колір тексту посилань при наведенні */
+}
+
+.image-text {
+    text-align: justify;
+    /* Для вирівнювання тексту по ширині */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Додайте це для вертикального центрування */
+}
+
+.image-text p {
+    margin-top: 20px;
+    /* Додайте простір між зображенням і текстом */
+}
+
+.shah_img {
+    width: auto;
+    /* Встановлює ширину зображення на 100% ширини його батьківського контейнера */
+    height: 100px;
+
+}
+
+.main {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    /* Центрує по горизонталі */
+    height: 15vh;
+    /* Забезпечує висоту, щоб центрувати елементи по вертикалі */
+    margin: 0;
+    /* Забезпечує відсутність внутрішніх відступів */
+}
+
+.footer {
+    margin: 0;
+    /* Встановлює зовнішній відступ нижнього колонтитула на 0 */
+    color: #6e6e6e;
+    /* Задає колір тексту нижнього колонтитула */
+    text-align: center;
+    /* Вирівнює текст по центру */
+    padding: 10px 0;
+    /* Встановлює внутрішні відступи нижнього колонтитула */
+    position: fixed;
+    /* Фіксує колонтитул на вікні браузера */
+    bottom: 0;
+    /* Встановлює відступ від нижнього краю вікна браузера */
+    width: 100%;
+    /* Задає ширину нижнього колонтитула на всю ширину вікна браузера */
+}
