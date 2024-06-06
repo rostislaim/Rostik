@@ -161,9 +161,9 @@ main {
 }
 
 
-aside h2 {
+/* aside h2 {
     color: #6e6e6e;
-}
+} */
 
 .shah_img {
     float: left;
@@ -218,16 +218,36 @@ ul li a:hover {
     width: 100%;
 }
 
+@keyframes parallax {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
 .video {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     padding: 20px;
+    gap: 20px;
+    width: auto;
 }
 
 .video iframe {
-    max-width: 100%;
-    height: auto;
-    flex: 1 1 300px;
+    width: 599px;
+    height: 315px;
+    flex: 0 0 auto;
+    animation: slide 60s linear infinite; /* Анімація для автоматичного рухання */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Початкове положення */
+    }
+    100% {
+        transform: translateX(-100%); /* Кінцеве положення */
+    }
 }

@@ -225,6 +225,8 @@ h1 {
     width: 100%;
 }
 
+/* Решта стилів тут */
+
 #news {
     margin-top: 20px;
 }
@@ -257,4 +259,12 @@ h1 {
 
 #news a:hover {
     text-decoration: underline;
+}
+
+#news iframe {
+    transition: transform 0.3s ease-in-out; /* Додаємо перехід для ефекту збільшення */
+}
+
+#news iframe:hover {
+    transform: scale(1.25); /* Збільшуємо відео на 25% при наведенні курсора */
 }

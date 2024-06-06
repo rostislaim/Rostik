@@ -1,70 +1,70 @@
 <!DOCTYPE html>
 <html lang="ua"> 
 <head> 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Реєстрація</title>
-    <link rel="shortcut icon" href="svg/register.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="css/Sign.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <meta charset="UTF-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Реєстрація</title> 
+    <link rel="shortcut icon" href="svg/register.svg" type="image/x-icon" /> 
+    <link rel="stylesheet" href="css/Sign.css" /> 
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" /> <!-- Посилання на іконки -->
 </head>
 
 <body>
     <div class="wrapper">
-        <form id="registerForm">
+        <form id="registerForm"> <!-- Форма реєстрації з ідентифікатором "registerForm" -->
             <h1>Реєстрація</h1>
-            <div class="input-box">
-                <input type="text" id="username" placeholder="Ім'я користувача" required />
-                <i class="bx bx-user"></i>
+            <div class="input-box"> 
+                <input type="text" id="username" placeholder="Ім'я користувача" required /> 
+                <i class="bx bx-user"></i> 
             </div>
-            <div class="input-box">
-                <input type="password" id="password" placeholder="Пароль" required />
-                <i class="bx bx-lock-alt"></i>
+            <div class="input-box"> 
+                <input type="password" id="password" placeholder="Пароль" required /> 
+                <i class="bx bx-lock-alt"></i> 
             </div>
-            <div class="input-box">
-                <input type="password" id="confirmPassword" placeholder="Підтвердження паролю" required />
-                <i class="bx bx-lock-alt"></i>
+            <div class="input-box"> <!-- Блок для підтвердження пароля -->
+                <input type="password" id="confirmPassword" placeholder="Підтвердження паролю" required /> 
+                <i class="bx bx-lock-alt"></i> 
             </div>
-            <button type="submit" id="submit" class="btn">Реєстрація</button>
-            <div class="alert" id="alert">Паролі не співпадають</div>
+            <button type="submit" id="submit" class="btn">Реєстрація</button> <!-- Кнопка для відправки форми -->
+            <div class="alert" id="alert">Паролі не співпадають</div> <!-- Блок для відображення повідомлення про помилку -->
         </form>
     </div>
     <script>
-        document.getElementById('registerForm').addEventListener('submit', async function(event) {
+        document.getElementById('registerForm').addEventListener('submit', async function(event) { //<!-- Обробка події відправки форми -->
             event.preventDefault();
 
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
+            const username = document.getElementById('username').value; //<!-- Отримання значення імені користувача -->
+            const password = document.getElementById('password').value; //<!-- Отримання значення пароля -->
+            const confirmPassword = document.getElementById('confirmPassword').value; //<!-- Отримання значення підтвердження пароля -->
             const alertBox = document.getElementById('alert');
 
-            if (password !== confirmPassword) {
-                alertBox.style.display = 'block';
-                return;
+            if (password !== confirmPassword) { 
+                alertBox.style.display = 'block'; 
+                return; 
             } else {
-                alertBox.style.display = 'none';
+                alertBox.style.display = 'none'; 
             }
 
             try {
-                const response = await fetch('http://localhost:3000/register', {
-                    method: 'POST',
+                const response = await fetch('http://localhost:3000/register', { //<!-- Відправка POST-запиту -->
+                    method: 'POST', 
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/json', 
                     },
-                    body: JSON.stringify({ username, password }),
+                    body: JSON.stringify({ username, password }), //<!-- Дані для відправки -->
                 });
 
-                if (response.ok) {
-                    const result = await response.json();
-                    alert(result.message);
+                if (response.ok) { //<!-- Перевірка успішності відправки -->
+                    const result = await response.json(); //<!-- Отримання даних з відповіді -->
+                    alert(result.message); //<!-- Виведення повідомлення про успішну реєстрацію -->
                 } else {
-                    const error = await response.json();
-                    alert('Помилка: ' + error.error);
+                    const error = await response.json(); //<!-- Отримання даних з відповіді про помилку -->
+                    alert('Помилка: ' + error.error); //<!-- Виведення повідомлення про помилку -->
                 }
-            } catch (err) {
-                console.error('Помилка:', err);
-                alert('Сталася помилка під час реєстрації. Спробуйте ще раз.');
+            } catch (err) { //<!-- Обробка помилок -->
+                console.error('Помилка:', err); //<!-- Виведення помилки в консоль -->
+                alert('Сталася помилка під час реєстрації. Спробуйте ще раз.'); //<!-- Виведення повідомлення про помилку -->
             }
         });
     </script>

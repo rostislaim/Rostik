@@ -68,6 +68,23 @@ a:hover {
     display: none;
 }
 
+@keyframes parallax {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.parallax-layer {
+    animation: parallax 5s forwards; /* Змінено тривалість на 5 секунд і додано forwards, щоб анімація зупинялася на кінці */
+    /* Додаткові стилі для паралаксу */
+    position: relative; /* Встановлення позиції відносної */
+    z-index: 1; /* Встановлення змінного індексу шару */
+}
+
+
 
 @media (max-width: 952px) {
     label.logo {
