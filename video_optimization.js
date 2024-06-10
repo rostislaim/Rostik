@@ -1,22 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var videoLinks = document.querySelectorAll('.video-link');
-
-    videoLinks.forEach(function (link) {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            var videoURL = this.getAttribute('href');
-            var iframe = document.createElement('iframe');
-            iframe.setAttribute('width', '599');
-            iframe.setAttribute('height', '315');
-            iframe.setAttribute('src', videoURL + '?autoplay=1');
-            iframe.setAttribute('title', 'YouTube video player');
-            iframe.setAttribute('frameborder', '0');
-            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-            iframe.setAttribute('allowfullscreen', '');
-            iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-
-            // Замінюємо посилання на відео власноруч створеним iframe
-            this.parentNode.replaceChild(iframe, this);
+document.addEventListener('DOMContentLoaded', function() {
+    const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+    videoThumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            const videoSrc = thumbnail.dataset.videoSrc;
+            thumbnail.innerHTML = `<iframe width="599" height="315" src="${videoSrc}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>`;
         });
     });
 });
