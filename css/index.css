@@ -63,7 +63,7 @@ a:hover {
     line-height: 80px;
     cursor: pointer;
     display: none;
-    z-index: 999; /* Завжди вище за інші елементи */
+    z-index: 9999; /* Завжди вище за інші елементи */
 }
 
 
