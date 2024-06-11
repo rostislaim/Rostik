@@ -57,12 +57,15 @@ a:hover {
 .checkbtn {
     font-size: 30px;
     color: white;
-    float: right;
+    position: fixed; /* Зафіксована позиція */
+    top: 0; /* Розташування від верхнього краю */
+    right: 40px; /* Розташування від правого краю */
     line-height: 80px;
-    margin-right: 40px;
     cursor: pointer;
     display: none;
+    z-index: 999; /* Завжди вище за інші елементи */
 }
+
 
 #check {
     display: none;
@@ -143,6 +146,7 @@ a:hover {
 }
 
 header {
+    position: relative;
     width: 100%;
     background-color: #baff39;
     padding: 20px;
