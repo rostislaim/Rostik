@@ -180,6 +180,8 @@ main {
 } */
 
 .shah_img {
+    width: 100%;
+    heigh: 100%;
     float: left;
     padding-right: 0px;
 }
