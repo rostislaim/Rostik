@@ -248,7 +248,7 @@ ul li a:hover {
     scroll-behavior: smooth;
     padding: 20px;
     gap: 20px;
-    width: 100%;
+    max-width: 80%;
 }
 
 .video iframe {
