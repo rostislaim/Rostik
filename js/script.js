@@ -1,7 +1,3 @@
-/**
- * Created by Pahansith on 4/3/2017.
- */
-
 var arrMovedWhitePawnList = [];
 var arrMovedBlackPawnList = [];
 
