@@ -665,33 +665,3 @@ function isObstaclesFound(obj, nextCell) {
     }
     return true;
 }
-
-/*function isKingChecked(type) {
-    var pos;
-    if (type === "white") {
-        pos = whiteKing.currentPosition;
-    } else {
-        pos = blackKing.currentPosition;
-    }
-
-    var offset = $("#" + pos).offset();
-    var x = offset.left;
-    var y = offset.top - 65;
-
-    var nextCell = document.elementFromPoint(x, y);
-
-    var id;
-    while ((id = inspectNextCell(nextCell)) === undefined) {
-        offset = $(nextCell).offset();
-        x = offset.left;
-        y = offset.top - 65;
-        nextCell = document.elementFromPoint(x, y);
-    }
-    if (!id.includes(type) && id.includes("castle") || id.includes("queen")) {
-        alert("King Check");
-    }
-}
-
-function inspectNextCell(nextCell) {
-    return $(nextCell).children('span').attr('id');
-}*/
